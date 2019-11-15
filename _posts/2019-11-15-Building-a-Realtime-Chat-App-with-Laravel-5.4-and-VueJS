@@ -1,6 +1,6 @@
 ---
 title: Building a Realtime Chat App with Laravel 5.4 and VueJS
-tags: [External Post, Git]
+tags: [External Post, PHP, Laravel, VueJS]
 style: fill
 color: warning
 description: With the announcement of Laravel Dusk, a browser automation and testing API tool, I noticed a cool chunk of demo code. It represents a realtime app that features user interacting using WebSockets
