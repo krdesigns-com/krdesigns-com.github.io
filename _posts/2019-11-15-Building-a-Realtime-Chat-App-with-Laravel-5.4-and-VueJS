@@ -1,8 +1,9 @@
 ---
-title: How to undo your git failure?
+title: Building a Realtime Chat App with Laravel 5.4 and VueJS
 tags: [External Post, Git]
 style: fill
 color: warning
-description: Using `git reflog` and `git reset` to save your code.
-external_url: https://blog.usejournal.com/how-to-undo-your-git-failure-b76e31ecac74
+description: With the announcement of Laravel Dusk, a browser automation and testing API tool, I noticed a cool chunk of demo code. It represents a realtime app that features user interacting using WebSockets:
+             This inspired me to build an app for which I could use that same exact snippet of code. It ended up involving quite a few steps, but Laravel made it easy!
+external_url: https://jplhomer.org/2017/01/building-realtime-chat-app-laravel-5-4-vuejs/
 ---
