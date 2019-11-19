@@ -21,7 +21,7 @@
     },
     {
       "name": "Line",
-      "package": "krdesigns/driver-wechat",
-      "description": "Use BotMan with the WeChat messenger."
+      "package": "krdesigns/driver-line",
+      "description": "Use BotMan with the Line messenger."
     }
   ]
