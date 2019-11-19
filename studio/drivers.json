@@ -26,7 +26,7 @@
     },
     {
       "name": "WeChat",
-      "package": "botman/driver-wechat",
+      "package": "krdesigns/driver-wechat",
       "description": "Use BotMan with the WeChat messenger."
     }
   ]
