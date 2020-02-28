@@ -1,9 +1,9 @@
 ---
-title: Raspberry Pi 4 running Official uBuntu 18.04.04 bootable from USB SSD Drive
-tags: [Ubuntu Official, Raspberry Pi 4, SSD Bootable]
+title: Raspberry Pi 4 running Official uBuntu 18.04.04 bootable guide from USB SSD Drive
+tags: [Ubuntu Official, Raspberry Pi 4, USB bootable drive, guide, ubuntu 18.04.04 LTS]
 style: border
 color: primary
-description: How to build and run uBuntu 18.04.04 on your Raspberry Pi 4 from USB SSD Driver.
+description: Guide to setup Raspberry Pi 4 to boot an official uBuntu 18.04.04 from your USB SSD Driver.
 ---
 Source: [KRDesigns.com blogs](https://www.krdesigns.com)
 
