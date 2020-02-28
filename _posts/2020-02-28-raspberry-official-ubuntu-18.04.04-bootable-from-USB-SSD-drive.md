@@ -21,7 +21,14 @@ Follow etcher step to burn both drive together (you can actually burn both drive
 
 Please make sure you read [James A. Chambers Blogs](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/) for a guide to enable USB SSD Drive. If it compatible then you should not have any issue. Since mine running using a non compatible enclosure (Orico) then an extra step need to be done to make sure your SSD Drive can be detected by Raspberry Pi.
 
-In my case I need to add `usb-storage.quirks=XXXX:XXXX:u` on `nobtcmd.txt` allowing ubuntu to mount SSD Drive correctly. Furthermore you need to replace `root=` to `root=/dev/sda2`.
+The original line on `nobtcmd.txt` is   
+`net.ifnames=0 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=LABEL=writable rootfstype=ext4 elevator=deadline rootwait fixrtc` 
+and you need to change it to   
+`net.ifnames=0 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfstype=ext4 elevator=deadline rootwait fixrtc` 
+or in my case   
+`usb-storage.quirks=XXXX:XXXX:u net.ifnames=0 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=LABEL=writable rootfstype=ext4 elevator=deadline rootwait fixrtc`
+
+This need to be added in my case to allow ubuntu to load SSD driver correctly `usb-storage.quirks=XXXX:XXXX:u` where `XXXX:XXXX` is the code from your SSD Drive ( Again please read [James A. Chambers Blogs](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/) guide to figure this out).
 
 Now you can connect both drive to your raspberry pi 4 and turn it on. If everything when well you will have your raspberry pi 4 running ubuntu 18.04.04 LTS on your SSD Drive. Once loaded ubuntu automatically will resize your SSD Drive partition to 100%.
 
