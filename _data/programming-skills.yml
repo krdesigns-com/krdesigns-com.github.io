@@ -1,11 +1,11 @@
 - name: HTML5/CSS3
-  percentage: 90
+  percentage: 40
   color: danger
 
-- name: Go
+- name: PHP
   percentage: 80
   color:
 
-- name: Python
-  percentage: 70
+- name: X-code
+  percentage: 30
   color: dark
