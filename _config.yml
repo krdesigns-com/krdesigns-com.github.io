@@ -45,7 +45,7 @@ author:
 
 
 ### Posts ###
-permalink: /blog/:title
+permalink: /articles/:title
 
 
 ### Collections ###
