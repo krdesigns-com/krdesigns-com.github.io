@@ -9,3 +9,11 @@
 - name: X-code
   percentage: 30
   color: dark
+
+- name: DevOps
+  percentage: 90
+  color: 
+
+- name: Linux
+  percentage: 80
+  color: 
