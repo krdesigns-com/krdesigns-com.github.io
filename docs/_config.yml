@@ -45,7 +45,7 @@ author:
 # youtube           : your_channel_name
 
 ### Posts ###
-permalink: /blog/:title
+permalink: /articles/:title
 
 
 ### Collections ###
