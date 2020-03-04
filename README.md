@@ -1,11 +1,5 @@
-[![KRDesigns.com][header]](https://krdesigns.com)
-
 <div align="center">
-    <i>My beatifull pages that works with GitHub Pages.</i><br><br>
+    <h1>KRDesigns.com</h1>
+    <i>A beautiful portfolio Jekyll theme that works with GitHub Pages.</i>
+    <sub><sup>© 2020 KRDesigns.com, licensed under the <a href="./LICENSE">MIT License</a>.</sup></sub>
 </div>
-
-<div align="center">
-    <sub><sup>© 2019 KRDesigns.com, licensed under the <a href="./LICENSE">MIT License</a>.</sup></sub>
-</div>
-
-[header]: https://krdesigns.com/docs/Logo.png?raw=true
