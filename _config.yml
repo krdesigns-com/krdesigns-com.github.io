@@ -77,3 +77,6 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+
+# Analytics
+prod-analytics-id: UA-159820849-1
