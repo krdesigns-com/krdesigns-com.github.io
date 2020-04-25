@@ -56,6 +56,13 @@ collections:
   elements:                                             # For Documentation Only
     output: true                                        # For Documentation Only
 
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /hass/:name
+  elements:                                             # For Documentation Only
+    output: true                                        # For Documentation Only
 
 ### Defaults for collections ###
 defaults:
