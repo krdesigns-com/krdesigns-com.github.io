@@ -5,7 +5,7 @@ style: border
 color: primary
 description: Guide to setup Raspberry Pi 4 to boot an official Raspbian Buster from your USB SSD Driver (currently in beta).
 ---
-Source: [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=274595)
+Source: [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=274595), [Andreas Spiess Youtube](https://www.youtube.com/watch?v=zVhYvvrGhMU)
 
 
 This is a my second tutorial on how to enable your Raspbian Pi 4 to boot from SSD Drive running the latest raspbian buster (2020-02-13).
