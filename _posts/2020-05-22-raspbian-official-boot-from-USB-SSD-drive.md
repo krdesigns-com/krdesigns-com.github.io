@@ -1,12 +1,15 @@
 ---
-title: Raspberry Pi 4 running Official Raspbian Buster bootable guide from USB SSD Drive
-tags: [Raspbian, Raspberry Pi 4, USB bootable drive, guide, raspbian buster, latest raspbian, beta eeprom]
+title: Raspberry Pi 4 running Official Raspbian (RaspiOS) Buster bootable guide from USB SSD Drive
+tags: [Raspbian, Raspberry Pi 4, USB bootable drive, guide, raspbian buster, latest raspbian, beta eeprom, upgrade, raspiOS]
 style: border
 color: primary
-description: Guide to setup Raspberry Pi 4 to boot an official Raspbian Buster from your USB SSD Driver (currently in beta).
+description: Guide to setup Raspberry Pi 4 to boot an official Raspbian Buster from your USB SSD Driver (currently in beta). Adding update on how to update your Raspbian to RaspiOS with the latest EEPROM.
 ---
-Source: [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=274595), [Andreas Spiess Youtube](https://www.youtube.com/watch?v=zVhYvvrGhMU)
+Source: [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=274595) and [Rapberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=275187), [Andreas Spiess Youtube](https://www.youtube.com/watch?v=zVhYvvrGhMU)
 
+## Update your Raspbian to RaspiOS with the latest EEPROM
+
+RaspiOS is now replacing raspbian, furthermore you will need to update the EEPROM with a newer one which have less bugs.
 
 This is a my second tutorial on how to enable your Raspbian Pi 4 to boot from SSD Drive running the latest raspbian buster (2020-02-13).
 
@@ -15,6 +18,31 @@ This is a my second tutorial on how to enable your Raspbian Pi 4 to boot from SS
 ## Why this guide
 
 Just want to have a fast and secure way of running my RPI 4 instead of needing microSD which much much slower in terms of speed and also in my case is very unreliable to run my home-assistant.
+
+## If you already have this information and wanna just update your EEPROM and have your new SSD running the latest RaspiOS
+** Remember if you have not done this then you will have to go through the setup process **
+
+First of all you need to have a fresh microSD and you will need to download latest [rpi-boot-eeprom-recovery-2020-05-28-vl805-000137ad-BETA](https://github.com/raspberrypi/rpi-eeprom/releases/download/v2020.05.28-137ad/rpi-boot-eeprom-recovery-2020-05-28-vl805-000137ad-BETA.zip)
+
+Then you unzip the EEPROM and copy all its content into your microSD, then you can boot your RPI4 with this microSD. Upon successful update the green light will blink rapidly (forever) or an error pattern will be displayed or if you connect your RPI to a monitor it will show GREEN screen or RED screen if it fail. 
+
+If all when well just turn off your RPI and then insert your first microSD (the one that you run to make a bootable SSD) again you will need to mount the new formated SSD (new RaspiOS images) 
+
+```
+# begin mounting your SSD Drive
+sudo mkdir /mnt/mydisk # if you already have this directory then you can skip it.
+sudo mount /dev/sda1 /mnt/mydisk
+
+# copy all files needed for the SSD to boot
+sudo cp /boot/*.elf /mnt/mydisk
+sudo cp /boot/*.dat /mnt/mydisk
+
+# Now its time to shutdown your RPI
+sudo shutdown now
+```
+
+OK remove the microSD and you are set to run the new SSD with the new RaspiOS.
+
 
 ## The setup
 
