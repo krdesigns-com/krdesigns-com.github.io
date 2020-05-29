@@ -11,7 +11,7 @@ Source: [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=
 
 RaspiOS is now replacing raspbian, furthermore you will need to update the EEPROM with a newer one which have less bugs.
 
-This is a my second tutorial on how to enable your Raspbian Pi 4 to boot from SSD Drive running the latest raspbian buster (2020-02-13).
+This is a my second tutorial on how to enable your Raspbian Pi 4 to boot from SSD Drive running the latest raspiOS (2020-05-27).
 
 ### WARNING THIS IS BETA EEPROM DO IT AT YOUR OWN RISK
 
