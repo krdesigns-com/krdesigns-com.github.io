@@ -14,7 +14,7 @@ I try to make this guide as simple as possible so you all can easily make this h
 
 # The Requirements:
 - Fresh microSD for eeprom upgrade (for those who have not do this)
-- SSD Drive compatible with Linux else you will need to follow [James A. Chambers Guide](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/)
+- SSD Drive compatible for Linux, or you will need to read [James A. Chambers Guide](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/)
 - [Balena Etcher](https://www.balena.io/etcher/) to burn the images
 - Latest 32bit [Raspbian OS](https://downloads.raspberrypi.org/raspios_lite_armhf_latest) for microSD
 - Latest 64bit [Ubuntu 20.04](https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04&architecture=arm64+raspi) for RPI
