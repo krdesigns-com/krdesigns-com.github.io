@@ -5,7 +5,7 @@ style: border
 color: primary
 description: Guide to setup Raspberry Pi 4 to boot an official uBuntu 20.04 from your USB SSD (no microSD).
 ---
-Source: [KRDesigns.com blogs](https://www.krdesigns.com), [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=131&t=278791), [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=131&t=281152), [Eugene Grechko Website](https://eugenegrechko.com/blog/USB-Boot-Ubuntu-Server-20.04-on-Raspberry-Pi-4), [leepspvideo](https://www.youtube.com/watch?v=SfxFS2mK6ok&t=288s), [Wimpysworld Git](https://github.com/wimpysworld/desktopify), [ETA Prime](https://www.youtube.com/watch?v=zo5eReiXYuo&t=147s)
+Source: [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=131&t=278791), [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=131&t=281152), [Eugene Grechko Website](https://eugenegrechko.com/blog/USB-Boot-Ubuntu-Server-20.04-on-Raspberry-Pi-4), [leepspvideo](https://www.youtube.com/watch?v=SfxFS2mK6ok&t=288s), [Wimpysworld Git](https://github.com/wimpysworld/desktopify), [ETA Prime](https://www.youtube.com/watch?v=zo5eReiXYuo&t=147s)
 
 ## Why this guide
 I wrote this article to help people who would like to run ubuntu 20.04 server on their Raspberry 4 from USB - SSD Drive rather then from microSD. Also will add bonus on adding ubuntu-mate windows for those who would like to have a desktop enhanced ubuntu-mate.
