@@ -23,13 +23,12 @@ I try to make this guide as simple as possible so you all can easily make this h
 # Upgrade RPI4 eeprom
 WARNING YOU WILL NEED TO DO THIS IF YOU HAVE NOT DONE THIS BEFORE! 
 
-First and for most is to update your RPI eeprom to the latest stable version. For this step you will require microSD and you can begin by burn your image to the microSD using balena etcher. Once complete be sure to unplug the microSD and replug it if you want to do it headleass. Headless installation will require that you add `ssh` to microSD boot this way upon booting you can ssh to your RPI.
+First you will need to update your RPI eeprom to the latest stable version. For this step you will require microSD and you can begin by burn your image to the microSD using balena etcher. Once completed you can unplug the microSD and replug back it if you want to run it headleass (Install without Monitor, Keyboard, and Mouse). Headless installation will require that you add `ssh` to microSD boot this way upon booting you can ssh to your RPI.
 
-Now that your RPI is up and running find the local IP and you can now SSH to the machine. 
+Now that your RPI is up and running, you will need to find the local IP and you can now SSH to the machine. 
 ```
-ssh pi@your-local-ip
-
 # raspbian OS standard password is 'rasberry'
+ssh pi@your-local-ip
 
 sudo apt update && sudo apt full-upgrade
 sudo reboot now
@@ -43,11 +42,11 @@ sudo reboot now
 ```
 
 # Mount SSD drive for boot preparations
-You will first have to burn the ubuntu 20.04 image into your SSD Drive using etcher. Once that is done be sure to add `ssh` on its boot folder so you can run your ubuntu headless. 
+Next step you will also need to burn the ubuntu 20.04 image into your SSD Drive using etcher. Once that complete you can also add `ssh` on its boot folder so that you can run your ubuntu headless. 
 
-Next you will need to mount the drive to your RPI, so you can fixed some files needed to allow your SSD Drive to boot by it self.
+Next you will need to mount the SSD drive to your RPI (be sure you plug it into the USB3), so you can fixed some files needed to allow your SSD Drive to boot by it self.
 
-You will require *.elf and *.dat files from [Raspberry pi git](https://github.com/raspberrypi/firmware/tree/master/boot) 
+This *.elf and *.dat files are required and you can download its from [Raspberry Pi official git REPO](https://github.com/raspberrypi/firmware/tree/master/boot) 
 
 ```
 # begin mounting your ssd
@@ -62,7 +61,7 @@ sudo cp *.dat /mnt/myboot
 zcat vmlinuz > vmlinux
 ```
 
-Next you will need to edit your config.txt
+Next you will need to edit your config.txt in my case I will edit using `nano config.txt`
 
 ```
 #edit config.txt
@@ -74,7 +73,7 @@ kernel=vmlinux
 initramfs initrd.img followkernel
 ```
 
-Now you will need to make an `auto_decompress_kernel` script in your boot SSD Drive and please make sure you `chmod +x auto_decompress_kernel`
+Now you will need to make an `auto_decompress_kernel` script in your boot SSD Drive and please make sure you change user permission `chmod +x auto_decompress_kernel`
 ```
 #!/bin/bash -e
 
@@ -127,12 +126,13 @@ exit 0
 
 You will need to make the kernel boot script. `nano /etc/apt/apt.conf.d/999_decompress_rpi_kernel`
 and again you will need to `chmod +x /etc/apt/apt.conf.d/999_decompress_rpi_kernel`
+
 ```
 # content 999_decompress_rpi_kernel
 DPkg::Post-Invoke {"/bin/bash /boot/firmware/auto_decompress_kernel"; };
 ```
 
-Now you should be able to boot from your SSD Drive without the need of your microSD anymore. Oh ya, make sure you run the `auto_decompress_kernel` once and you are now set.
+Its DONE, you should now be able to boot from your SSD Drive without the need of your microSD anymore. Oh be sure you run `auto_decompress_kernel` once and you are set.
 
 
 # Bonus trick for adding an Optimized UBUNTU-MATE windows for those who would like to used it as a Desktop
