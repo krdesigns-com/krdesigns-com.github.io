@@ -14,10 +14,10 @@ I try to make this guide as simple as possible so you all can easily make this h
 
 # The Requirements:
 - Fresh microSD for eeprom upgrade (for those who have not do this)
-- SSD Drive compatible with Linux else you will need to follow James Guide
-- Balena Etcher to burn the images
-- Latest 32bit Raspbian OS for microSD
-- Latest 64bit Ubuntu 20.04 for RPI
+- SSD Drive compatible with Linux else you will need to follow [James A. Chambers Guide](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/)
+- [Balena Etcher](https://www.balena.io/etcher/) to burn the images
+- Latest 32bit [Raspbian OS](https://downloads.raspberrypi.org/raspios_lite_armhf_latest) for microSD
+- Latest 64bit [Ubuntu 20.04](https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04&architecture=arm64+raspi) for RPI
 - Some files required to be copy for booting
 
 # Upgrade RPI4 eeprom
@@ -45,7 +45,7 @@ You will first have to burn the ubuntu 20.04 image into your SSD Drive using etc
 
 Next you will need to mount the drive to your RPI, so you can fixed some files needed to allow your SSD Drive to boot by it self.
 
-You will require some files from [Raspberry pi git]https://github.com/raspberrypi/firmware/tree/master/boot) 
+You will require *.elf and *.dat files from [Raspberry pi git](https://github.com/raspberrypi/firmware/tree/master/boot) 
 
 ```
 # begin mounting your ssd
@@ -130,7 +130,7 @@ and again you will need to `chmod +x /etc/apt/apt.conf.d/999_decompress_rpi_kern
 DPkg::Post-Invoke {"/bin/bash /boot/firmware/auto_decompress_kernel"; };
 ```
 
-Now you should be able to boot from your SSD Drive without the need of your microSD anymore.
+Now you should be able to boot from your SSD Drive without the need of your microSD anymore. Oh ya, make sure you run the `auto_decompress_kernel` once and you are now set.
 
 
 # Bonus trick for adding an Optimized UBUNTU-MATE windows for those who would like to used it as a Desktop
