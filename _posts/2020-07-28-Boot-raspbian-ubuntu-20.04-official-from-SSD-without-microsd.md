@@ -1,5 +1,5 @@
 ---
-title: Raspberry Pi 4 running Official uBuntu 20.04 bootable guide from USB SSD Drive
+title: Raspberry Pi 4 running Official Ubuntu 20.04 bootable guide from USB SSD Drive
 tags: [Ubuntu Official, Raspberry Pi 4, USB bootable drive, guide, ubuntu 20.04 LTS, latest ubuntu, new eeprom, update]
 style: border
 color: primary
