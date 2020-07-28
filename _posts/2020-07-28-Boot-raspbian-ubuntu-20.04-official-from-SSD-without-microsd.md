@@ -21,6 +21,8 @@ I try to make this guide as simple as possible so you all can easily make this h
 - Some files required to be copy for booting
 
 # Upgrade RPI4 eeprom
+WARNING YOU WILL NEED TO DO THIS IF YOU HAVE NOT DONE THIS BEFORE! 
+
 First and for most is to update your RPI eeprom to the latest stable version. For this step you will require microSD and you can begin by burn your image to the microSD using balena etcher. Once complete be sure to unplug the microSD and replug it if you want to do it headleass. Headless installation will require that you add `ssh` to microSD boot this way upon booting you can ssh to your RPI.
 
 Now that your RPI is up and running find the local IP and you can now SSH to the machine. 
