@@ -61,7 +61,7 @@ sudo cp *.dat /mnt/myboot
 zcat vmlinuz > vmlinux
 ```
 
-Next you will need to edit your config.txt in my case I will edit using `nano config.txt`
+Next you will need to edit your config.txt in my case I will edit using `nano /mnt/myboot/config.txt`
 
 ```
 #edit config.txt
@@ -73,7 +73,7 @@ kernel=vmlinux
 initramfs initrd.img followkernel
 ```
 
-Now you will need to make an `auto_decompress_kernel` script in your boot SSD Drive and please make sure you change user permission `chmod +x auto_decompress_kernel`
+Now you will need to make an `auto_decompress_kernel` script in your boot SSD Drive and please make sure you change user permission `chmod +x auto_decompress_kernel`. The script need to be written down at this directory `/mnt/myboot` you can use `nano /mnt/myboot/auto_decompress_kernel` and paste the below scripts.
 ```
 #!/bin/bash -e
 
@@ -132,7 +132,7 @@ and again you will need to `chmod +x /etc/apt/apt.conf.d/999_decompress_rpi_kern
 DPkg::Post-Invoke {"/bin/bash /boot/firmware/auto_decompress_kernel"; };
 ```
 
-Its DONE, you should now be able to boot from your SSD Drive without the need of your microSD anymore. Oh be sure you run `auto_decompress_kernel` once and you are set.
+Its DONE, you should now be able to boot from your SSD Drive without the need of your microSD anymore. Oh be sure you run `/dev/sda1/auto_decompress_kernel` once and you are set.
 
 
 # Bonus trick for adding an Optimized UBUNTU-MATE windows for those who would like to used it as a Desktop
@@ -142,4 +142,4 @@ cd desktopify
 ./desktopify --de ubuntu-mate
 ```
 
-Now sit back relax and make sure you hookup your RPI4 to your monitor, keyboard, and mouse. Enjoy!
+Remember this process will take some times to complete. So now sit back relax and make sure you hookup your RPI4 to your monitor, keyboard, and mouse. For those who own an ultrawide monitor like mine this setup will automatically setup to **"2560x1080"** which very nice indeed. Enjoy!

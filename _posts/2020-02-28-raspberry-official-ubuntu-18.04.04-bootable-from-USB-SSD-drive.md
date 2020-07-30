@@ -7,9 +7,9 @@ description: Guide to setup Raspberry Pi 4 to boot an official uBuntu 18.04.04/2
 ---
 Source: [KRDesigns.com blogs](https://www.krdesigns.com)
 
-This is a simple tutorial on how to enable your Raspbian Pi 4 boot from SSD Drive running official release ubuntu 18.04.04.
+## THIS GUIDE IS OBSOLETE 
 
-**update:** ubuntu 20.04 is now release and it have major changes for this trick to work.
+If you want to totally boot your ubuntu 20.04 from USB SSD Drive please check my latest guide [here](https://krdesigns.com/articles/Boot-raspbian-ubuntu-20.04-official-from-SSD-without-microsd)
 
 ## Why this guide
 
