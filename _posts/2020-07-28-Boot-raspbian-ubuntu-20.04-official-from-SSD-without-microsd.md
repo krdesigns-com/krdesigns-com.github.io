@@ -132,7 +132,7 @@ and again you will need to `chmod +x /etc/apt/apt.conf.d/999_decompress_rpi_kern
 DPkg::Post-Invoke {"/bin/bash /boot/firmware/auto_decompress_kernel"; };
 ```
 
-Its DONE, you should now be able to boot from your SSD Drive without the need of your microSD anymore. Oh be sure you run `/dev/sda1/auto_decompress_kernel` once and you are set.
+Its DONE, you should now be able to boot from your SSD Drive without the need of your microSD anymore. Oh be sure you run `/boot/firmaware/auto_decompress_kernel` once and you are set.
 
 
 # Bonus trick for adding an Optimized UBUNTU-MATE windows for those who would like to used it as a Desktop
