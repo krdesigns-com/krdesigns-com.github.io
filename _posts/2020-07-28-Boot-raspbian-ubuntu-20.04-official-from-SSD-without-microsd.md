@@ -51,14 +51,13 @@ Next you will need to mount the SSD drive to your RPI (be sure you plug it into 
 This *.elf and *.dat files are required and you can download its from [Raspberry Pi official git REPO](https://github.com/raspberrypi/firmware/tree/master/boot) or you can 
 
 ```
-# The command to grab the .dat and .elf files
+# download files necessaries from https://github.com/raspberrypi/firmware/tree/master/boot
 wget $( wget -qO - https://github.com/raspberrypi/firmware/tree/master/boot | perl -nE 'chomp; next unless /[.](elf|dat)/; s/.*href="([^"]+)".*/$1/; s/blob/raw/; say qq{https://github.com$_}' )
 
 # begin mounting your ssd
 sudo mkdir /mnt/myboot
 sudo mount /dev/sda1 /mnt/myboot
 
-# download files necessaries from https://github.com/raspberrypi/firmware/tree/master/boot
 # copy all files need to SSD
 sudo cp *.elf /mnt/myboot
 sudo cp *.dat /mnt/myboot
