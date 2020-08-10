@@ -7,6 +7,8 @@ description: Guide to setup Raspberry Pi 4 to boot an official uBuntu 20.04 from
 ---
 Source: [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=131&t=278791), [Raspberry Pi Forum](https://www.raspberrypi.org/forums/viewtopic.php?f=131&t=281152), [Eugene Grechko Website](https://eugenegrechko.com/blog/USB-Boot-Ubuntu-Server-20.04-on-Raspberry-Pi-4), [leepspvideo](https://www.youtube.com/watch?v=SfxFS2mK6ok&t=288s), [Wimpysworld Git](https://github.com/wimpysworld/desktopify), [ETA Prime](https://www.youtube.com/watch?v=zo5eReiXYuo&t=147s)
 
+## Latest update of this guide on 10 August 2020
+
 ## Why this guide
 I wrote this article to help people who would like to run ubuntu 20.04 server on their Raspberry 4 from USB - SSD Drive rather then from microSD. Also will add bonus on adding ubuntu-mate windows for those who would like to have a desktop enhanced ubuntu-mate.
 
@@ -46,9 +48,12 @@ Next step you will also need to burn the ubuntu 20.04 image into your SSD Drive 
 
 Next you will need to mount the SSD drive to your RPI (be sure you plug it into the USB3), so you can fixed some files needed to allow your SSD Drive to boot by it self.
 
-This *.elf and *.dat files are required and you can download its from [Raspberry Pi official git REPO](https://github.com/raspberrypi/firmware/tree/master/boot) 
+This *.elf and *.dat files are required and you can download its from [Raspberry Pi official git REPO](https://github.com/raspberrypi/firmware/tree/master/boot) or you can 
 
 ```
+# The command to grab the .dat and .elf files
+wget $( wget -qO - https://github.com/raspberrypi/firmware/tree/master/boot | perl -nE 'chomp; next unless /[.](elf|dat)/; s/.*href="([^"]+)".*/$1/; s/blob/raw/; say qq{https://github.com$_}' )
+
 # begin mounting your ssd
 sudo mkdir /mnt/myboot
 sudo mount /dev/sda1 /mnt/myboot
@@ -57,7 +62,19 @@ sudo mount /dev/sda1 /mnt/myboot
 # copy all files need to SSD
 sudo cp *.elf /mnt/myboot
 sudo cp *.dat /mnt/myboot
+```
 
+You will then need to change into root user, so you can perform the next steps
+
+```
+# Create root new password
+sudo passwd
+
+# Become a root
+su
+
+# go to boot directory
+cd /mnt/myboot
 zcat vmlinuz > vmlinux
 ```
 
@@ -131,7 +148,7 @@ and again you will need to `chmod +x /etc/apt/apt.conf.d/999_decompress_rpi_kern
 DPkg::Post-Invoke {"/bin/bash /boot/firmware/auto_decompress_kernel"; };
 ```
 
-Its DONE, you should now be able to boot from your SSD Drive without the need of your microSD anymore. Oh be sure you run `/boot/firmaware/auto_decompress_kernel` once and you are set.
+Its DONE, you should now be able to boot from your SSD Drive without the need of your microSD anymore. Once you complete the boot be sure you run `/boot/firmaware/auto_decompress_kernel` once and you are set.
 
 
 # Bonus trick for adding an Optimized UBUNTU-MATE windows for those who would like to used it as a Desktop
