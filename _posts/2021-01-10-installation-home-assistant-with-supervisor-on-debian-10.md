@@ -20,7 +20,7 @@ I also want to help those nubies with advance installations methods with a step-
 - Raspbian Imager [download here](https://www.raspberrypi.org/software/)
 - Your public ssh keys (please google it on how to create one for you)
 
-**Warning!**
+**Warning!**  
 If you are using USB SSD please make sure you read [James A. Chambers Blogs](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/) for a guide to enable USB SSD Drive. If it compatible then you should not have any issue. Since mine running using a non compatible enclosure (Orico) then an extra step need to be done to make sure your SSD Drive can be detected by Raspberry Pi.
 
 
@@ -40,7 +40,7 @@ root_pw=yourpassword
 root_authorized_key=your_public_ssh_key
 ```
 
-**WARNING!**
+**WARNING!**  
 Make sure you have your SSH Public Key available else you wont be able to login. Please google to find out how you can create your own SSH public keys.
 
 Now you need to connect your microSD/USB to your Raspberry 4 and start it up (be sure that your network is connected to your Raspberry) Open compelete first run your raspberry network green light should be blinking else it did not get IP or fail to run. Use Router or Network software from your computer to remotely access your Raspberry.
