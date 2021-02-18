@@ -5,7 +5,7 @@ style: border
 color: primary
 description: Making a smart doorbell using the dumb doorbell and Sonoff Mini then integrated to Home-Assistant.
 ---
-Source: [KRDesigns.com blogs](https://www.krdesigns.com)
+Source: [KRDesigns.com blogs](https://www.krdesigns.com), [Home-Assistant](https://home-assistant.io), [Sonoff Mini](https://sonoff.tech/product/wifi-diy-smart-switches/sonoff-minir2), [AlexxIT SonoffLAN](https://github.com/AlexxIT/SonoffLAN)
 
 ## THE DEVICE
 - Panasonic Electric Bell (EBG888)
@@ -17,13 +17,13 @@ Source: [KRDesigns.com blogs](https://www.krdesigns.com)
 - [AlexIT SonoffLAN add-on](https://github.com/AlexxIT/SonoffLAN)
 
 ## Why sonoff mini?
-The reason why I used sonoff mini because its cheap, it support `pulse mode` which allow the switch to be call once and set it back to off using `inching settings`. Sonoff mini combine with AlexIT SonoffLAN add-on Home-Assistant can get the device online in not time.
+The reason why I used sonoff mini because its cheap, it support `pulse mode` which allow the switch to be call once and set it back to off using `inching settings`. Sonoff mini combine with AlexIT SonoffLAN add-on gave me an easy access to the the switch without doing much.
 
 ## How do I do it:
 Combine all the hardware using this schematics   
 ![pic 1](https://raw.githubusercontent.com/krdesigns-com/krdesigns-com.github.io/master/img/pic1.png "my schema")
 
-## Home-Assisant Code
+## Home-Assistant Code
 ```yaml
 - alias: Notification Doorbell activated
   id: xxxx-xxxx-xxxx
