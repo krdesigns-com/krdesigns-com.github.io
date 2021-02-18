@@ -1,5 +1,5 @@
 ---
-title: Transform dumb doorbell to smart doorbell and connected to Home-Assistant
+title: Transform dumb doorbell to smart doorbell and connected to HA
 tags: [home-assistant, HA, Debian, Supervised, Panasonic, SonOff, SonOff Mini]
 style: border
 color: primary
