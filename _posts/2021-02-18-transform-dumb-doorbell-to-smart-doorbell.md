@@ -23,6 +23,10 @@ The reason why I used sonoff mini because its cheap, it support `pulse mode` whi
 Combine all the hardware using this schematics   
 ![pic 1](https://raw.githubusercontent.com/krdesigns-com/krdesigns-com.github.io/master/img/pic1.png "my schema")
 
+## The Prototype
+This is the prototype before installing the entire project
+![pic 2](https://raw.githubusercontent.com/krdesigns-com/krdesigns-com.github.io/master/img/doorbell.png "the prototype")
+
 ## Home-Assistant Code
 ```yaml
 - alias: Notification Doorbell activated
