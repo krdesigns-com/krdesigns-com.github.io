@@ -25,7 +25,7 @@ Combine all the hardware using this schematics
 
 ## The Prototype
 This is the prototype before installing the entire project
-![pic 2](https://raw.githubusercontent.com/krdesigns-com/krdesigns-com.github.io/master/img/doorbell.png "the prototype")
+![pic 2](https://raw.githubusercontent.com/krdesigns-com/krdesigns-com.github.io/master/img/doorbell.jpg "the prototype")
 
 ## Home-Assistant Code
 ```yaml
