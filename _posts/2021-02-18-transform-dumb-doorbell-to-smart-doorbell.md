@@ -21,7 +21,7 @@ The reason why I used sonoff mini because its cheap, it support `pulse mode` whi
 
 ## How do I do it:
 Combine all the hardware using this schematics   
-![pic 1](img/pic1.jpg "my schema")
+![pic 1](https://raw.githubusercontent.com/krdesigns-com/krdesigns-com.github.io/master/img/pic1.png "my schema")
 
 ## Home-Assisant Code
 ```yaml
