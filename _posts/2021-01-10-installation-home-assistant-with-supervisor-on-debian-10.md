@@ -47,6 +47,9 @@ Now you need to connect your microSD/USB to your Raspberry 4 and start it up (be
 
 Now SSH yourself into your raspberry from your computer (in my case I run it using mac terminal) by typing `ssh root@the-ip` and then enter your SSH password. 
 
+**WARNING! if you are using SSD as your bootable disk**
+Due to a bugs on Debian 10 Raspberry please make sure you run this command once before you do anything else `apt-mark hold linux-image-arm64`. If you dont then your SSD wont be able to boot, upon reboot.
+
 You are now inside your Raspberry running Debian 10 and now you can begin to update your Debian Package by typing `apt-get update && apt-get dist-upgrade -y && apt autoremove -y` 
 
 Next you will have to install all the requirement for HA + Supervised by typing `apt-get install -y software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager` then you will need to disable and stop ModemManager by typing `systemctl disable ModemManager` and `systemctl stop ModemManager`
