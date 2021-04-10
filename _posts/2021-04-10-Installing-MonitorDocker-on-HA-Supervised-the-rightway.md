@@ -19,7 +19,7 @@ Source: [KRDesigns.com blogs](https://www.krdesigns.com), [Home-Assistant](https
 Monitor Docker is a very nice plugin if you would like to add plugins/sensor to monitor all your docker running on your network. So if you are running **Docker Home-Assistant core** you will be able to run it. However like my self and many other, we want to have more feature for our Home-Assistant which the team called it Supervised version. Supervised version run with strict rules which exclude Home-Assistant running with `/var/run/docker.sock` in which required by **Monitor Docker** to get the sensor information. So, up until last week I have not find a better way to install it without having to modified HA Docker volume detail everytime HA being updated to a new version.
 
 ## How do I do it:
-I fork [Sami Jawhar project](https://github.com/sjawhar/docker-socket-proxy) build more support for Raspberry Pi 32bit and 64bit, have the container available on Docker Hub, this way I can help anyone from Home-Assistant community to enjoy **Monitor Docker** without any problem.
+I fork [Sami Jawhar project](https://github.com/sjawhar/docker-socket-proxy) and build more container adn support more platform such as a Raspberry Pi 32bit and 64bit and have the container available on Docker Hub, this way I can help anyone from Home-Assistant community to enjoy **Monitor Docker** without any problem.
 
 1. You will need to install your [HA Supervised](https://github.com/home-assistant/supervised-installer) version. If you need help on installing this version for Raspberry Pi 4, you can follow my guide [here](https://krdesigns.com/articles/installation-home-assistant-with-supervisor-on-debian-10)
 
