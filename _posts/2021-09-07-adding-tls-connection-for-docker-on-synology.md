@@ -215,7 +215,7 @@ First of all you need to stop your docker from you synology control panel.
 SSH to your synology and be sure you have a root access
 
 ##### Editing
-go and edit `/var/packages/Docker/etc/dockerd.json`
+go and edit `/var/packages/Docker/etc/dockerd.json`  
 
 ##### Add Line
 You need to add the five line to make it work 
