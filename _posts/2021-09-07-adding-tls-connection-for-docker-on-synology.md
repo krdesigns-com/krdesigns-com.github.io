@@ -21,7 +21,7 @@ For Linux machine is very easy since it can run using the script, so I will shar
 1. Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
 and then paste:
 
-```bash
+`bash
 #!/usr/bin/env bash
 
 export CA_KEY=${CA_KEY-"ca-key.pem"}
@@ -174,6 +174,6 @@ echo "====> Complete"
 echo "keys can be found in volume mapped to $(pwd)"
 echo
 fi
-```   
+` 
 save and you are ready to run the scripts to create your certificate and be sure to `chmod +x *`. to make the script executable.
 
