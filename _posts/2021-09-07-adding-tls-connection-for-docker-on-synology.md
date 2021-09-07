@@ -19,9 +19,7 @@ For Linux machine is very easy since it can run using the script, so I will shar
 
 ## How do I do it:
 - Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
-and then paste:
-
-```bash
+and then paste: ```bash
 #!/usr/bin/env bash
 
 export CA_KEY=${CA_KEY-"ca-key.pem"}
@@ -179,9 +177,7 @@ save and you are ready to run the scripts to create your certificate and be sure
 
 - Run the command and adding SUBJECT and IP to your certificate by typing `SSL_SUBJECT=dockerhost1.local SSL_IP=192.168.1.12,192.168.1.11 ./certs_create.sh`
 
-- For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste
-
-```bash
+- For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste ```bash
 #!/bin/bash
 set -ex
 
@@ -209,9 +205,7 @@ Save and you should again `chmod +x certs_apply.sh` to make the script executabl
 
 - go and edit `/var/packages/Docker/etc/dockerd.json'
 
-- You need to add the five line to make it work
-
-```bash
+- You need to add the five line to make it work ```bash
    "hosts": ["unix:///var/run/docker.sock", "tcp://0.0.0.0:2375"],
    "tls" : true,
    "tlscacert": "/volume1/docker/certs/ca.pem",
