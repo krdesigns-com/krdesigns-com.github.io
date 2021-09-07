@@ -19,7 +19,7 @@ For Linux machine is very easy since it can run using the script, so I will shar
 
 ## How do I do it:
 - Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
-and then paste:
+and then paste: 
 ```bash
 #!/usr/bin/env bash
 
@@ -173,12 +173,12 @@ echo "====> Complete"
 echo "keys can be found in volume mapped to $(pwd)"
 echo
 fi
-```
+``` 
 save and you are ready to run the scripts to create your certificate and be sure to `chmod +x *`. to make the script executable.
 
 2. Run the command and adding SUBJECT and IP to your certificate by typing `SSL_SUBJECT=dockerhost1.local SSL_IP=192.168.1.12,192.168.1.11 ./certs_create.sh`
 
-3. For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste
+3. For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste 
 ```bash
 #!/bin/bash
 set -ex
@@ -194,7 +194,7 @@ cp daemon.json /etc/docker/
 
 systemctl daemon-reload
 systemctl restart docker
-```
+``` 
 Save and you should again `chmod +x certs_apply.sh` to make the script executable 
 
 4. Run the certs_apply.sh to setup your linux machine and restart docker.
@@ -207,7 +207,7 @@ Save and you should again `chmod +x certs_apply.sh` to make the script executabl
 
 8. go and edit `/var/packages/Docker/etc/dockerd.json'
 
-9. You need to add the five line to make it work
+9. You need to add the five line to make it work 
 ```bash
    "hosts": ["unix:///var/run/docker.sock", "tcp://0.0.0.0:2375"],
    "tls" : true,
@@ -215,7 +215,7 @@ Save and you should again `chmod +x certs_apply.sh` to make the script executabl
    "tlscert": "/volume1/docker/certs/cert.pem",
    "tlskey": "/volume1/docker/certs/key.pem",
    "tlsverify": true,
-```
+``` 
 in my case I store my certs on `/volume1/docker/certs` directory so I will get a easy access via synology control panel.
 
 Be sure to save it and you are almost done.
