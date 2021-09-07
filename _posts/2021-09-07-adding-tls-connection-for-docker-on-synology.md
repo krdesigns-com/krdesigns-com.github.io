@@ -18,10 +18,9 @@ I need to monitored my docker using portainer and gather some docker data monito
 For Linux machine is very easy since it can run using the script, so I will share a scripts made by mwolter. However for those who are running synology will not being able to run the scripts since synology have their own custom docker and so I will give you detail on how to do it.
 
 ## How do I do it:
-1. Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
+- Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
 and then paste:
-
-```
+```bash
 #!/usr/bin/env bash
 
 export CA_KEY=${CA_KEY-"ca-key.pem"}
@@ -41,7 +40,6 @@ export SSL_DNS=${SSL_DNS}
 export SSL_IP=${SSL_IP}
 
 # Print IP v4 addresses, select only the interface and address, exclude certain interfaces, remove everything except the IP address, replace new line characters \n with comma (,), remove comma from end of string if exists
-# export SERVER_IP=${SERVER_IP:-$(ip -o -4 addr show | awk '{print $2" "$4}' | grep -v -e "docker" -e "br-" -e "veth" | sed -n -r -e 's|.* (.*?)\/.*|\1|p' | tr '\n' ',' | sed 's/\,$//')}
 
 # name for docker daemon file
 export DAEMON=${DAEMON:-"daemon.json"}
@@ -181,8 +179,7 @@ save and you are ready to run the scripts to create your certificate and be sure
 2. Run the command and adding SUBJECT and IP to your certificate by typing `SSL_SUBJECT=dockerhost1.local SSL_IP=192.168.1.12,192.168.1.11 ./certs_create.sh`
 
 3. For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste
-
-```
+```bash
 #!/bin/bash
 set -ex
 
@@ -211,8 +208,7 @@ Save and you should again `chmod +x certs_apply.sh` to make the script executabl
 8. go and edit `/var/packages/Docker/etc/dockerd.json'
 
 9. You need to add the five line to make it work
-
-```
+```bash
    "hosts": ["unix:///var/run/docker.sock", "tcp://0.0.0.0:2375"],
    "tls" : true,
    "tlscacert": "/volume1/docker/certs/ca.pem",
