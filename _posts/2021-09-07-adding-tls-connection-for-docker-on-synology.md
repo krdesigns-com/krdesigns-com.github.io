@@ -228,8 +228,7 @@ Be sure to save it and you are almost done.
 ## How do I access my docker remotely?
 1. Install [portainer](https://www.portainer.io/) in one of your machine.
 2. Go to "Settings >> Endpoints >> Add endpoint"
-3. Fill the necessary info like IP and upload your created TLS
-![pic 1](https://raw.githubusercontent.com/krdesigns-com/krdesigns-com.github.io/master/img/portaine1.png "Pic 1")
+3. Fill the necessary info like IP and upload your created TLS ![pic 1](https://raw.githubusercontent.com/krdesigns-com/krdesigns-com.github.io/master/img/portainer1.png "Pic 1")
 4. Add endpoint and thats it.
 5. Go to Home and you should see the remote docker at your disposal
 
