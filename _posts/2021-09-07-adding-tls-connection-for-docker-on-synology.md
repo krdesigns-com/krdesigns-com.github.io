@@ -18,7 +18,8 @@ I need to monitored my docker using portainer and gather some docker data monito
 For Linux machine is very easy since it can run using the script, so I will share a scripts made by mwolter. However for those who are running synology will not being able to run the scripts since synology have their own custom docker and so I will give you detail on how to do it.
 
 ## How do I do it:
-1. Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
+##### Make your Certificate
+Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
 and then paste:
 
 ```bash
@@ -177,3 +178,69 @@ fi
 ```
 save and you are ready to run the scripts to create your certificate and be sure to `chmod +x *`. to make the script executable.
 
+##### Run certs_create.sh
+Run the command and adding SUBJECT and IP to your certificate by typing `SSL_SUBJECT=dockerhost1.local SSL_IP=192.168.1.12,192.168.1.11 ./certs_create.sh`
+
+##### LINUX Machine only
+For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste 
+
+```bash
+#!/bin/bash
+set -ex
+
+mkdir -p /etc/systemd/system/docker.service.d
+cat > /etc/systemd/system/docker.service.d/docker.conf <<EOM
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd
+EOM
+
+cp daemon.json /etc/docker/
+
+systemctl daemon-reload
+systemctl restart docker
+```
+Save and you should again `chmod +x certs_apply.sh` to make the script executable 
+
+##### Run certs_apply.sh
+Run the certs_apply.sh to setup your linux machine and restart docker.
+
+##### Synology Only
+For Synology we will have to have a different approach all together since the certs_apply.sh did not work (well at least at the time being, since I have not have time to modified the script) 
+
+##### First
+First of all you need to stop your docker from you synology control panel. 
+
+##### SSH as Root
+SSH to your synology and be sure you have a root access
+
+##### Editing
+go and edit `/var/packages/Docker/etc/dockerd.json'
+
+##### Add Line
+You need to add the five line to make it work 
+
+```bash
+   "hosts": ["unix:///var/run/docker.sock", "tcp://0.0.0.0:2375"],
+   "tls" : true,
+   "tlscacert": "/volume1/docker/certs/ca.pem",
+   "tlscert": "/volume1/docker/certs/cert.pem",
+   "tlskey": "/volume1/docker/certs/key.pem",
+   "tlsverify": true,
+```
+in my case I store my certs on `/volume1/docker/certs` directory so I will get a easy access via synology control panel.
+
+Be sure to save it and you are almost done.
+
+##### Restart Synology Docker
+Restart your docker once again and TLS is now up and running. Thats it.
+
+## How do I access my docker remotely?
+1. Install [portainer](https://www.portainer.io/) in one of your machine.
+2. Go to "Settings >> Endpoints >> Add endpoint"
+3. Fill the necessary info like IP and upload your created TLS ![pic 1](https://raw.githubusercontent.com/krdesigns-com/krdesigns-com.github.io/master/img/portainer1.png "Pic 1")
+4. Add endpoint and thats it.
+5. Go to Home and you should see the remote docker at your disposal
+
+## Closing
+I hope this guide will help you with secure remote docker access and maybe I'll update more detail on how to add your docker info into [Home-Assistant](https://www.home-assistant.io). 
