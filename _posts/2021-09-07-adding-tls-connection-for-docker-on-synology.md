@@ -19,7 +19,8 @@ For Linux machine is very easy since it can run using the script, so I will shar
 
 ## How do I do it:
 - Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
-and then paste:  
+and then paste:
+
 ```bash
 #!/usr/bin/env bash
 
@@ -176,9 +177,10 @@ fi
 ```
 save and you are ready to run the scripts to create your certificate and be sure to `chmod +x *`. to make the script executable.
 
-2. Run the command and adding SUBJECT and IP to your certificate by typing `SSL_SUBJECT=dockerhost1.local SSL_IP=192.168.1.12,192.168.1.11 ./certs_create.sh`
+- Run the command and adding SUBJECT and IP to your certificate by typing `SSL_SUBJECT=dockerhost1.local SSL_IP=192.168.1.12,192.168.1.11 ./certs_create.sh`
 
-3. For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste  
+- For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste
+
 ```bash
 #!/bin/bash
 set -ex
@@ -197,17 +199,18 @@ systemctl restart docker
 ```
 Save and you should again `chmod +x certs_apply.sh` to make the script executable 
 
-4. Run the certs_apply.sh to setup your linux machine and restart docker.
+- Run the certs_apply.sh to setup your linux machine and restart docker.
 
-5. For Synology we will have to have a different approach all together since the certs_apply.sh did not work (well at least at the time being, since I have not have time to modified the script) 
+- For Synology we will have to have a different approach all together since the certs_apply.sh did not work (well at least at the time being, since I have not have time to modified the script) 
 
-6. First of all you need to stop your docker from you synology control panel. 
+- First of all you need to stop your docker from you synology control panel. 
 
-7. SSH to your synology and be sure you have a root access
+- SSH to your synology and be sure you have a root access
 
-8. go and edit `/var/packages/Docker/etc/dockerd.json'
+- go and edit `/var/packages/Docker/etc/dockerd.json'
 
-9. You need to add the five line to make it work  
+- You need to add the five line to make it work
+
 ```bash
    "hosts": ["unix:///var/run/docker.sock", "tcp://0.0.0.0:2375"],
    "tls" : true,
@@ -220,7 +223,7 @@ in my case I store my certs on `/volume1/docker/certs` directory so I will get a
 
 Be sure to save it and you are almost done.
 
-10. Restart your docker once again and TLS is now up and running. Thats it.
+- Restart your docker once again and TLS is now up and running. Thats it.
 
 ## How do I access my docker remotely?
 1. Install [portainer](https://www.portainer.io/) in one of your machine.
