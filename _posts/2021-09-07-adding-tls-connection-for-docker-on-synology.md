@@ -18,7 +18,7 @@ I need to monitored my docker using portainer and gather some docker data monito
 For Linux machine is very easy since it can run using the script, so I will share a scripts made by mwolter. However for those who are running synology will not being able to run the scripts since synology have their own custom docker and so I will give you detail on how to do it.
 
 ## How do I do it:
-- Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
+1. Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
 and then paste: ```bash
 #!/usr/bin/env bash
 
@@ -175,9 +175,9 @@ fi
 ```
 save and you are ready to run the scripts to create your certificate and be sure to `chmod +x *`. to make the script executable.
 
-- Run the command and adding SUBJECT and IP to your certificate by typing `SSL_SUBJECT=dockerhost1.local SSL_IP=192.168.1.12,192.168.1.11 ./certs_create.sh`
+2. Run the command and adding SUBJECT and IP to your certificate by typing `SSL_SUBJECT=dockerhost1.local SSL_IP=192.168.1.12,192.168.1.11 ./certs_create.sh`
 
-- For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste ```bash
+3. For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste ```bash
 #!/bin/bash
 set -ex
 
