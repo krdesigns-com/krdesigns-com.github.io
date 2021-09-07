@@ -181,6 +181,7 @@ save and you are ready to run the scripts to create your certificate and be sure
 2. Run the command and adding SUBJECT and IP to your certificate by typing `SSL_SUBJECT=dockerhost1.local SSL_IP=192.168.1.12,192.168.1.11 ./certs_create.sh`
 
 3. For Linux machine (ONLY) you can also run this scripts (made my mwolter) to have it setup for docker-proxy-socket to be set. You simply add `nano certs_apply.sh` inside the certs directory and then paste
+
 ```
 #!/bin/bash
 set -ex
