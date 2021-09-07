@@ -20,6 +20,7 @@ For Linux machine is very easy since it can run using the script, so I will shar
 ## How do I do it:
 1. Make sure you build your certificate by running this scripts made by mwolter. To create the script simply do `mkdir certs && cd certs` then you can used any linux editor such as `nano certs_create.sh`
 and then paste:
+
 ```bash
 #!/usr/bin/env bash
 
