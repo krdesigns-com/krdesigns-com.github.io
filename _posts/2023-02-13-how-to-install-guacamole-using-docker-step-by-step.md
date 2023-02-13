@@ -62,12 +62,12 @@ after saving the files please run `docker-compose up -d`
 
 Next you need to copy the SQL file into the docker container
 ```
-docker cp initdb.sql guacdb:/initdb.sql
+docker cp initdb.sql guacamoledb:/initdb.sql
 ```
 
 Last but not least begin to input it to the DB by running this:
 ```
-docker exec -it guacdb bash
+docker exec -it guacamoledb bash
 cat /initdb.sql | mysql -u root -p guacamole_db
 exit
 ```
