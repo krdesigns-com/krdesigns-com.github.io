@@ -106,7 +106,7 @@ DOCKER_PROD_MYSQL_ROOT_PASSWORD=xxxxxxxxxxxxxxxxxxxxxxxxx
 ## Run you docker-compose
 `docker compose -f docker-compose.nonginx.yml up -d`
 
-if everything work as it should be then your compile docker will stop workin and both your `backend` directory and `dashboard` directory should have `dist` folder. If you did not see them, then you need to recheck your docker logs.
+if everything work as it should be then your compile docker `zeppelin-prod-build_dashboard-1` and `zeppelin-prod-prepare_backend-1` will stop running after 5 or 10 minutes tops and it will created inside your `backend` directory and `dashboard` directory a new `dist` folder. If you did not see them, then you need to recheck your docker logs.
 
 
 ## Setup NGINX conf
