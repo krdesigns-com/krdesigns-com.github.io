@@ -154,5 +154,15 @@ server {
 
 If everything working properly you should be able to reach your dashboard via https://sub.yourdomain.com and also able to run config dashboard.
 
+## Rebuild Docker
+Be sure you kill all your docker container
+`docker compose -f docker-compose.nonginx.yml down -v`
+
+and then you can rebuild it using
+`docker compose -f docker-compose.nonginx.yml up --build -d`
+
+P.S.
+In some cases, I will remove all the `zeppelinbot` directory and redo the clone just to be sure the DB datadump get wipeout.
+
 ## Closing
 I hope this guide will help you install and run Zeppelin Discord Bot easily without any problem. Please ask me any help via comment or [Zeppelin Hangar](https://discord.gg/6UgSqvjy)
