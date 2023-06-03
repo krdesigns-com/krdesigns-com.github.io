@@ -39,7 +39,7 @@ change to your newly created user
 Clone my Zeppelin fork which currently work and I also add the nonginx composer files
 ```
 git clone https://github.com/ranrinc/zeppelinbot
-cd Zeppelin
+cd zeppelinbot
 cp .env.example .env
 ```
 Make your key by
@@ -115,7 +115,7 @@ if everything work as it should be then your compile docker will stop workin and
 server {
     listen 443 ssl http2;
     server_name sub.yourdomain.com;
-    root /home/discordbot/Zeppelin/dashboard/dist;
+    root /home/discordbot/zeppelinbot/dashboard/dist;
 
     # SSL
     ssl_certificate /etc/letsencrypt/live/sub.yourdomain.com/fullchain.pem;
